@@ -1,0 +1,3 @@
+/Users/feenix/Desktop/Clion projects/cmake-build-debug/CMakeFiles/Clion_projects.dir
+/Users/feenix/Desktop/Clion projects/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/feenix/Desktop/Clion projects/cmake-build-debug/CMakeFiles/rebuild_cache.dir
