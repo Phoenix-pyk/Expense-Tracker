@@ -74,3 +74,4 @@ int main() {
         cout << "What type of expenses? Enter All, "
     }
 }
+// not a good idea but sure
