@@ -2,14 +2,24 @@
 #include <vector>
 using namespace std;
 
+// created a struct of expense which includes date description and amount.
+struct expense {
+    int date = 0000;
+    string category;
+    string description;
+    double amount = 0;
+};
+
+double total (string a, vector<expense> &b) {
+    double t=0;
+    for (auto i: b){
+        if (i.category == a) t += i.amount;
+    }
+    return t;
+}
+
 int main() {
-    // created a struct of expense which includes date description and amount.
-    struct expense {
-        int date = 0000;
-        string category;
-        string description;
-        double amount = 0;
-    };
+
     // a vector of expenses to store user data.
     vector<expense> expenses;
     char yesno;
@@ -71,7 +81,6 @@ int main() {
         string type;
         cout <<"Which month would you like to see? Enter in 00 format: " ;
         cin >> month;
-        cout << "What type of expenses? Enter All, "
+        cout << "What type of expenses? Enter All, personal, groceries or other: ";
     }
 }
-// not a good idea but sure....
