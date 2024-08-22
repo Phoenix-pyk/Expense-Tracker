@@ -10,12 +10,21 @@ struct expense {
     double amount = 0;
 };
 
-double total (string a, vector<expense> &b) {
+double total (string a, vector<expense> &b, int c) {
     double t=0;
     for (auto i: b){
-        if (i.category == a) t += i.amount;
+        if ((i.date/100)==c && i.category == a) t += i.amount;
     }
     return t;
+}
+void showMonthlySummaryForType(vector<expense> &b, const string a, int c) {
+    cout << "Monthly expense summary for category: " << c << endl;
+    for (int month = 1; month <= 12; ++month) {
+        double totalAmount = total(a, b, c);
+        if (totalAmount > 0) {
+            cout << "Month " << (month < 10 ? "0" : "") << month << ": " << totalAmount << endl;
+        }
+    }
 }
 
 int main() {
@@ -81,6 +90,11 @@ int main() {
         string type;
         cout <<"Which month would you like to see? Enter in 00 format: " ;
         cin >> month;
-        cout << "What type of expenses? Enter All, personal, groceries or other: ";
+        cout << "What type of expenses? Enter personal, groceries or other: ";
+        cin >> type;
+        showMonthlySummaryForType(expenses, type, month);
     }
+    return 0;
 }
+
+
